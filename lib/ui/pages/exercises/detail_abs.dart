@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:prfit_v2/models/abs.dart';
 
 class AbsDetail extends StatelessWidget {
-  const AbsDetail({Key? key}) : super(key: key);
+  final Abs? abs;
+  const AbsDetail({
+    Key? key,
+    this.abs,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +19,7 @@ class AbsDetail extends StatelessWidget {
             color: const Color(0xffFFFFFF),
             boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 1)]),
         child: Image.asset(
-          'assets/abs/air_bike.gif',
+          abs!.gambar,
           width: 350,
           height: 350,
         ),

@@ -71,7 +71,7 @@ class _MainPageState extends State<MainPage> {
         return const HomePage();
 
       case 1:
-        return const MapPage();
+        return const TutorialPage();
 
       case 2:
         return const BmiCalculator();
