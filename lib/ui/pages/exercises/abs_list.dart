@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prfit_v2/models/abs.dart';
 import 'package:prfit_v2/ui/pages/exercises/detail_abs.dart';
 
 class AbsList extends StatelessWidget {
@@ -12,20 +13,22 @@ class AbsList extends StatelessWidget {
             'Latihan Otot Perut',
           ),
         ),
-        body: ListView(
-          children: [
-            Card(
+        body: ListView.builder(
+          itemCount: absList.length,
+          itemBuilder: (context, index) {
+            Abs abs = absList[index];
+            return Card(
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: ListTile(
-                  title: const Text('Air Bike',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
+                  title: Text(abs.nama,
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w400)),
                   leading: CircleAvatar(
                     radius: 30,
                     backgroundColor: const Color(0xffFFFFFF),
                     child: Image.asset(
-                      'assets/abs/air_bike.gif',
+                      abs.gambar,
                     ),
                   ),
                   trailing: const Icon(Icons.arrow_forward_ios_rounded),
@@ -33,14 +36,14 @@ class AbsList extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AbsDetail(),
+                        builder: (context) => AbsDetail(abs),
                       ),
                     );
                   },
                 ),
               ),
-            )
-          ],
+            );
+          },
         ));
   }
 }
