@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:prfit_v2/models/exercises.dart';
 import 'package:prfit_v2/ui/pages/exercises/abs_list.dart';
 
 class TutorialCard extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  const TutorialCard({Key? key, required this.imageUrl, required this.title})
-      : super(key: key);
+  final Exercises exercises;
+  const TutorialCard(
+    this.exercises, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +20,11 @@ class TutorialCard extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              imageUrl,
+              exercises.gambar,
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.2,
             ),
-            Text(title)
+            Text(exercises.nama)
           ],
         ),
       ),

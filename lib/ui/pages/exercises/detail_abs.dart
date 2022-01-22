@@ -39,7 +39,7 @@ class AbsDetail extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
-              child: Text(abs.nama, style: TextStyle(fontSize: 21.0)),
+              child: Text(abs.nama, style: const TextStyle(fontSize: 21.0)),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 15),

@@ -1,0 +1,32 @@
+{
+  "data": { "abs":
+      {
+          "id": 1,
+          "body_part": "Abs",
+          "image_url": "assets/exercises/abs.png",
+          "exercises": [{
+            "id": 11,  
+            "name": "Air Bike"
+          },
+          {
+            "id": 11,  
+            "name": "Air Bike"
+          }
+        ]
+      },
+      "chest": {
+        "id": 2,
+        "body_part": "Chest",
+        "image_url": "assets/exercises/abs.png",
+        "exercises": [{
+          "id": 21,  
+          "name": "Air Bike"
+        },
+        {
+          "id": 22,  
+          "name": "Air Bike"
+        }
+      ]
+    }
+  }
+}
