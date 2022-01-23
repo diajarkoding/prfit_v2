@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:prfit_v2/shared/theme.dart';
-
 class InfoPage extends StatelessWidget {
   const InfoPage({Key? key}) : super(key: key);
 
@@ -13,7 +11,7 @@ class InfoPage extends StatelessWidget {
         height: 210,
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         decoration: BoxDecoration(
-            color: greyColor,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(20),
             image: const DecorationImage(
                 image: AssetImage(
@@ -253,7 +251,7 @@ class InfoPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Row(

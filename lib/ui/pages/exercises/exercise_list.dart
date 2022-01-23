@@ -1,44 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:prfit_v2/models/abs.dart';
-import 'package:prfit_v2/ui/pages/exercises/detail_abs.dart';
+import 'package:get/get.dart';
+import 'package:prfit_v2/models/exercises.dart';
+import 'package:prfit_v2/ui/pages/exercises/exercise_detail.dart';
 
-class AbsList extends StatelessWidget {
-  const AbsList({Key? key}) : super(key: key);
+class ExerciseList extends StatelessWidget {
+  final Exercises exercises;
+  const ExerciseList(this.exercises, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'Latihan Otot Perut',
+          title: Text(
+            exercises.nama,
           ),
         ),
         body: ListView.builder(
-          itemCount: absList.length,
+          itemCount: exercises.exerciseList.length,
           itemBuilder: (context, index) {
-            Abs abs = absList[index];
             return Card(
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: ListTile(
-                  title: Text(abs.nama,
+                  title: Text(exercises.exerciseList[index]['nama'],
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.w400)),
                   leading: CircleAvatar(
                     radius: 30,
                     backgroundColor: const Color(0xffFFFFFF),
                     child: Image.asset(
-                      abs.gambar,
+                      exercises.exerciseList[index]['gambar'],
                     ),
                   ),
                   trailing: const Icon(Icons.arrow_forward_ios_rounded),
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AbsDetail(abs),
-                      ),
-                    );
+                    Get.to(() => ExerciseDetail(exercises), arguments: index);
                   },
                 ),
               ),

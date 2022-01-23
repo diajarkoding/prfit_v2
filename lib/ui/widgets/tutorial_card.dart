@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:prfit_v2/models/exercises.dart';
-import 'package:prfit_v2/ui/pages/exercises/abs_list.dart';
+import 'package:prfit_v2/ui/pages/exercises/exercise_list.dart';
 
 class TutorialCard extends StatelessWidget {
   final Exercises exercises;
@@ -12,8 +13,9 @@ class TutorialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const AbsList())),
+      onTap: () {
+        Get.to(() => ExerciseList(exercises));
+      },
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.296,
         height: MediaQuery.of(context).size.height * 0.239,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'dart:async';
 import 'package:prfit_v2/ui/pages/main_page.dart';
 
@@ -14,8 +15,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     Timer(
       const Duration(seconds: 3),
-      () => Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const MainPage())),
+      () => Get.to(() => const MainPage()),
     );
 
     super.initState();

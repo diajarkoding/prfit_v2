@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prfit_v2/shared/theme.dart';
 import 'package:prfit_v2/ui/pages/info_page.dart';
 
 import 'bmi_page.dart';
@@ -19,7 +18,7 @@ class _MainPageState extends State<MainPage> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 2),
       child: BottomNavigationBar(
-        backgroundColor: whiteColor,
+        backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         onTap: (value) {
@@ -33,7 +32,7 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(
               Icons.home,
               size: 26,
-              color: currentIndex == 0 ? Colors.blue : greyColor,
+              color: currentIndex == 0 ? Colors.blue : Colors.grey,
             ),
           ),
           BottomNavigationBarItem(
@@ -41,7 +40,7 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(
               Icons.fitness_center,
               size: 26,
-              color: currentIndex == 1 ? Colors.blue : greyColor,
+              color: currentIndex == 1 ? Colors.blue : Colors.grey,
             ),
           ),
           BottomNavigationBarItem(
@@ -49,7 +48,7 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(
               Icons.calculate,
               size: 26,
-              color: currentIndex == 2 ? Colors.blue : greyColor,
+              color: currentIndex == 2 ? Colors.blue : Colors.grey,
             ),
           ),
           BottomNavigationBarItem(
@@ -57,7 +56,7 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(
               Icons.info,
               size: 26,
-              color: currentIndex == 3 ? Colors.blue : greyColor,
+              color: currentIndex == 3 ? Colors.blue : Colors.grey,
             ),
           ),
         ],
@@ -87,7 +86,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: Colors.white,
       bottomNavigationBar: customBottomNavBar(),
       body: body(),
     );

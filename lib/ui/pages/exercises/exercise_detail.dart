@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:prfit_v2/models/abs.dart';
+import 'package:get/get.dart';
+import 'package:prfit_v2/models/exercises.dart';
 
-class AbsDetail extends StatelessWidget {
-  final Abs abs;
-  const AbsDetail(
-    this.abs, {
+class ExerciseDetail extends StatelessWidget {
+  final Exercises exercises;
+  const ExerciseDetail(
+    this.exercises, {
     Key? key,
   }) : super(key: key);
 
@@ -19,7 +20,7 @@ class AbsDetail extends StatelessWidget {
             color: const Color(0xffFFFFFF),
             boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 1)]),
         child: Image.asset(
-          abs.gambar,
+          exercises.exerciseList[Get.arguments]['gambar'],
           width: 350,
           height: 350,
         ),
@@ -39,7 +40,8 @@ class AbsDetail extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
-              child: Text(abs.nama, style: const TextStyle(fontSize: 21.0)),
+              child: Text(exercises.exerciseList[Get.arguments]['nama'],
+                  style: const TextStyle(fontSize: 21.0)),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
@@ -51,7 +53,7 @@ class AbsDetail extends StatelessWidget {
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
                   ),
                   Text(
-                    abs.otot,
+                    exercises.exerciseList[Get.arguments]['otot'],
                     style: const TextStyle(fontSize: 15.0),
                   )
                 ],
@@ -64,7 +66,7 @@ class AbsDetail extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
                 ),
                 Text(
-                  abs.alat,
+                  exercises.exerciseList[Get.arguments]['alat'],
                   style: const TextStyle(fontSize: 15.0),
                 )
               ],
@@ -77,7 +79,7 @@ class AbsDetail extends StatelessWidget {
               ),
             ),
             Text(
-              abs.tutorial,
+              exercises.exerciseList[Get.arguments]['tutorial'],
               style: const TextStyle(
                 fontSize: 15.0,
               ),
@@ -89,7 +91,7 @@ class AbsDetail extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Air Bike'),
+        title: Text(exercises.exerciseList[Get.arguments]['nama']),
       ),
       body: SingleChildScrollView(
         child: Column(
